@@ -13,6 +13,7 @@
   <script src="/js/angular.min.js"></script>
   <script src="/js/init.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <link rel="shortcut icon" type="image/png" href="./img/the_flux_icon.png"/>
   <style>
     html {
       font-family: "helvetica";
@@ -22,9 +23,43 @@
 </head>
 
 <body>
-  <div ng-include="'./views/menu.html'"></div>
+  <!-- <div ng-include="'./views/menu.html'"></div>
   <div ng-view></div>
-  <div ng-include="'/views/footer.html'"></div>
+  <div ng-include="'/views/footer.html'"></div> -->
+  <div class="container">
+    <br>
+    <br>
+    <div class="row">
+      <div class="col s12 offset-m2 m8 offset-l3 l6">
+        <center>
+          <img src="../img/the_flux_icon.png" alt="The Flux" style="width: 40%;">
+        </center>
+        <h4 class="header center light">Nossa alegria é tornar você mais rico</h4>
+        <p class="center">
+          Em breve nosso site estara no ar :)
+        </p>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+  </div>
+  <div id="divMidiaSocial" style="position: fixed; bottom: 0; right: 0;" class="ng-scope">
+    <a href="https://www.facebook.com/basicflux/" target="_blank">
+      <img src="./img/facebook-logo-button.png" alt="Facebook" class="imagem-social">
+    </a>
+    <a href="https://www.instagram.com/basicflux/" target="_blank">
+      <img src="./img/instagram-logo.png" alt="Instagram" class="imagem-social">
+    </a>
+  </div>
+  <style>
+    .imagem-social {
+      height: 30px;
+      bottom: 6px;
+      margin-right: 6px;
+    }
+  </style>
 </body>
 
 </html>
