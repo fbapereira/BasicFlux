@@ -3,7 +3,7 @@
         <a id="logo-container" href="#" class="brand-logo"></a>
         <ul class="right hide-on-med-and-down">
             <li>
-                <a href="/">Início</a>
+                <a href="/" onclick="$('.button-collapse').sideNav('hide');">Início</a>
             </li>
             <li>
                 <a id="menuDesk6" class="dropdown-button" href="#!" data-activates="ddService">Serviços
@@ -11,22 +11,23 @@
                 </a>
             </li>
             <li>
-                <a href="#!portifolio">Portifolio</a>
+                <a href="#!portifolio" onclick="$('.button-collapse').sideNav('hide');">Portifolio</a>
             </li>
             <li>
-                <a href="/pages/localizacao.html">Apps</a>
+                <a href="#!app" onclick="$('.button-collapse').sideNav('hide');">Apps</a>
             </li>
             <li>
-                <a href="http://blog.basicflux.com" target="_blank">Blog</a>
+                <a href="http://blog.basicflux.com" target="_blank" onclick="$('.button-collapse').sideNav('hide');">Blog</a>
             </li>
             <li>
-                <a href="/pages/localizacao.html" class="waves-effect purple darken-3 waves-light btn">Contato</a>
+                <a href="#!contato" class="waves-effect purple darken-3 waves-light btn" onclick="$('.button-collapse').sideNav('hide');">Contato</a>
             </li>
+
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
             <li>
-                <a href="/">Início</a>
+                <a href="/" onclick="$('.button-collapse').sideNav('hide');">Início</a>
             </li>
             <li>
                 <a id="menuDesk2" class="dropdown-button" href="#!" data-activates="ddService">Serviços
@@ -34,16 +35,16 @@
                 </a>
             </li>
             <li>
-                <a href="#!portifolio">Portifolio</a>
+                <a href="#!portifolio" onclick="$('.button-collapse').sideNav('hide');">Portifolio</a>
             </li>
             <li>
-                <a href="/pages/localizacao.html">Apps</a>
+                <a href="#!app" onclick="$('.button-collapse').sideNav('hide');">Apps</a>
             </li>
             <li>
-                <a href="http://blog.basicflux.com" target="_blank">Blog</a>
+                <a href="http://blog.basicflux.com" target="_blank" onclick="$('.button-collapse').sideNav('hide');">Blog</a>
             </li>
             <li>
-                <a href="/pages/localizacao.html">Contato</a>
+                <a href="#!contatos" onclick="$('.button-collapse').sideNav('hide');">Contato</a>
             </li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse">
@@ -54,16 +55,16 @@
 <!-- servicos -->
 <ul id="ddService" class="dropdown-content purple darken-3">
     <li>
-        <a href="#!financeiro" class="white-text">Financeiro</a>
+        <a href="#!financeiro" class="white-text" onclick="$('.button-collapse').sideNav('hide');">Financeiro</a>
     </li>
     <li>
-        <a href="#!sistematizacao" class="white-text">Sistematização</a>
+        <a href="#!sistematizacao" class="white-text" onclick="$('.button-collapse').sideNav('hide');">Sistematização</a>
     </li>
     <li>
-        <a href="#!inovacao" class="white-text">Inovação</a>
+        <a href="#!inovacao" class="white-text" onclick="$('.button-collapse').sideNav('hide');">Inovação</a>
     </li>
     <li>
-        <a href="#!servicosdigitais" class="white-text">Serviços Digitais</a>
+        <a href="#!servicosdigitais" class="white-text" onclick="$('.button-collapse').sideNav('hide');">Serviços Digitais</a>
     </li>
 </ul>
 
@@ -71,65 +72,33 @@
 <!-- Apps -->
 <ul id="ddApps" class="dropdown-content  purple darken-3">
     <li>
-        <a href="/pages/Acupuntura.html" class="purple-text">The Flux</a>
+        <a href="#!app" class="purple-text" onclick="$('.button-collapse').sideNav('hide');">The Flux</a>
     </li>
 </ul>
 
-
-<!-- Portifolio -->
-<ul id="ddPortifolio" class="dropdown-content">
-    <li>
-        <a class="subheader">Pessoa Juridica</a>
-    </li>
-    <li>
-        <a href="/pages/Acupuntura.html" class="white-text">Barbearia</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Igreja Vida Em Cristo</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Willsinho Personal</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">CTACC</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Em42</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Dona Rute</a>
-    </li>
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li>
-        <a class="subheader">Perssoa Física</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Andrea Ferrari</a>
-    </li>
-    <li>
-        <a href="#!" class="white-text">Felipe Borges</a>
-    </li>
-</ul>
 <script>
+
+
+
+    function FixInterface() {
+        $('.button-collapse').sideNav({
+            //closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true, // Choose whether you can drag to open on touch screens,
+            onOpen: function (el) {
+                $("#menuDesk2").dropdown();
+            }, // A function to be called when sideNav is opened
+            onClose: function (el) {
+                $("#menuDesk6").dropdown();
+            }
+        }
+        );
+    }
+
     (function ($) {
         $(function () {
 
-            $(".dropdown-button").dropdown();
-            $(".button-collapse").sideNav();
-
-            $("#menuDesk1").dropdown();
-            $("#menuDesk2").dropdown();
-            $("#menuDesk3").dropdown();
-            $("#menuDesk4").dropdown();
-            $("#menuDesk5").dropdown();
             $("#menuDesk6").dropdown();
-            $("#menuDesk7").dropdown();
-            $("#menuDesk8").dropdown();
-
+            FixInterface();
         }); // end of document ready
     })(jQuery); // end of jQuery name space
-
-
 </script>
